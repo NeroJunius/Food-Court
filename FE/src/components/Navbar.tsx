@@ -12,9 +12,8 @@ export default function Navbar() {
                 <ul className="hidden md:flex">
                     <li className="p-4">Home</li>
                     <li className="p-4">About</li>
-                    <li className="p-4">Services</li>
-                    <li className="p-4">Contact</li>
-                    <li className="p-4 ">Login</li>
+                    <li className="p-4">Login</li>
+                    <li className="p-4 ">Register</li>
                 </ul>
             <div onClick={handleNav} onKeyDown={handleNav} className='block md:hidden'>
                 {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
@@ -22,10 +21,10 @@ export default function Navbar() {
             <div className={!nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'fixed left-[-100%]'}>
                 <h1 className="w-full text-7x1 font-bold text-white m-4">Home</h1>
                 <ul className="pt-24 uppercase">
-                    <li className="p-4 border-b border-gray-600">About</li>
                     <li className="p-4 border-b border-gray-600">Home</li>
-                    <li className="p-4 border-b border-gray-600">Services</li>
-                    <li className="p-4 border-b border-gray-600">Contact</li>
+                    <li className="p-4 border-b border-gray-600">About</li>
+                    <li className="p-4 border-b border-gray-600">Login</li>
+                    <li className="p-4 border-b border-gray-600">Register</li>
                     <li className="p-4">Login</li>
                 </ul>
             </div>

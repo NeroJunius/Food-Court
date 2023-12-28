@@ -1,6 +1,6 @@
 import Contact from "./Contact";
 import Hero from "./Hero";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 import Order from "./Order";
 
 export default function Home() {
@@ -8,8 +8,8 @@ export default function Home() {
             <div>
             <Navbar/>
             <Hero/>
-            <Order/>
-            <Contact/>
+            {/* <Order/> */}
+            {/* <Contact/> */}
             </div>
     )
 }
