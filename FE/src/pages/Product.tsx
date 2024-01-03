@@ -1,11 +1,11 @@
-import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
+import Detail from "../components/DetailProduct";
 
-export default function Home() {
+export default function Product() {
     return (
         <div>
             <Navbar />
-            <Hero />
+            <Detail />
         </div>
     )
 }
