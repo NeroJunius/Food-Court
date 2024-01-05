@@ -1,20 +1,26 @@
-import { AppDataSource } from "./data-source"
-import { User } from "./entity/User"
+import express from "express";
+import mongoose from "mongoose";
+import router from "./routes";
 
-AppDataSource.initialize().then(async () => {
+const app = express();
+const port = 5000;
+const cors = require('cors')
+const uri = "mongodb+srv://nero002:nero002@cluster0.cryk6la.mongodb.net/";
 
-    console.log("Inserting a new user into the database...")
-    const user = new User()
-    user.firstName = "Timber"
-    user.lastName = "Saw"
-    user.age = 25
-    await AppDataSource.manager.save(user)
-    console.log("Saved a new user with id: " + user.id)
+app.use(cors())
+app.use(express.json());
+app.use("/api", router);
+app.get("/", async (req: express.Request, res: express.Response) => {
+   res.send("Waysbucks API");
+});
 
-    console.log("Loading users from the database...")
-    const users = await AppDataSource.manager.find(User)
-    console.log("Loaded users: ", users)
+app.listen(port, async () => {
+   try {
+      await mongoose.connect(uri);
 
-    console.log("Here you can setup and run express / fastify / any other framework.")
+      console.log(`http://localhost:${port}`);
+   } catch (error) {
+      console.log(error);
+   }
+});
 
-}).catch(error => console.log(error))
